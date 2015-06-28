@@ -11,6 +11,10 @@ html {
   font-family: 'Roboto Slab', serif;
 }
 
+ui-view {
+  height: inherit;
+}
+
 .md-button.md-icon-button.menubtn {
   margin-top: 6px;
 }
