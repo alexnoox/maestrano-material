@@ -6,34 +6,36 @@
   .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($log, $mdSidenav, muppetService) {
-    var ctrl = this;
+  function MainController($log, $mdSidenav, gridTileService, muppetService) {
+    var vm = this;
 
-    ctrl.selected = null;
+    vm.selected = null;
 
-    ctrl.loadMuppets();
+    muppetService.loadAll().then(function(muppets){
+      vm.muppets = muppets;
+      vm.selected = vm.muppets[0];
+    });
+
+    gridTileService.loadGridModel({
+      icon : "avatar:svg-",
+      title: "Widget ",
+      background: ""
+    }).then(function(tiles){
+      vm.tiles = tiles;
+    });
 
     //*******************
     // Internal Methods
     //*******************
-    ctrl.loadMuppets = function() {
-      $log.debug('loadMuppets');
-      muppetService.loadAll()
-        .then(function(muppets){
-          ctrl.muppets = muppets;
-          ctrl.selected = ctrl.muppets[0];
-        });
-    };
-
-    ctrl.toggleSidenav = function() {
+    vm.toggleSidenav = function() {
       $log.debug('toggleSidenav');
-      $mdSidenav('left').toggle();
+      $mdSidenav('right').toggle();
     };
 
-    ctrl.selectMuppet = function(muppet) {
+    vm.selectMuppet = function(muppet) {
       $log.debug('selectMuppet ' + muppet);
-      ctrl.selected = angular.isNumber(muppet) ? ctrl.muppets[muppet] : muppet;
-      $mdSidenav('left').close();
+      vm.selected = angular.isNumber(muppet) ? vm.muppets[muppet] : muppet;
+      $mdSidenav('right').close();
     };
   }
 })();
