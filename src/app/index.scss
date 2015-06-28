@@ -1,0 +1,75 @@
+/**
+ *  Do not remove this comments bellow. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
+
+html {
+  font-family: 'Roboto Slab', serif;
+}
+
+ui-view {
+  height: inherit;
+}
+
+.md-button.md-icon-button.menuBtn {
+  margin-top: 6px;
+  margin-right: 0;
+}
+
+.muppet-list .md-button {
+  color: inherit;
+  text-align: left;
+  width: 100%;
+}
+
+.muppet-list .selected {
+  color: #03a9f4;
+}
+
+.face {
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  display: inline-block;
+  margin: 4px 16px;
+  vertical-align: middle;
+  width: 48px;
+}
+
+.content-wrapper {
+  position: relative;
+}
+
+#primary-col {
+  overflow: hidden;
+}
+
+#primary-col .md-button {
+  margin: 8px auto 16px 0;
+}
+
+#primary-col .cell {
+  flex: 1 1 auto;
+}
+
+#primary-col img {
+  display: block;
+  max-width: 100%;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector
