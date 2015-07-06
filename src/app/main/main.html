@@ -6,9 +6,21 @@
   </md-button>
 </md-toolbar>
 
-<div layout="row" flex>
+<div layout="column" flex>
+
+  <div flex gridster="vm.gridsterOpts">
+      <ul>
+          <li gridster-item="item" ng-repeat="item in vm.standardItems">
+              <div ng-class="item.background" >
+                  <md-icon md-svg-icon="{{item.icon}}"></md-icon>
+                  <md-grid-tile-header><h3>{{item.title}}</h3></md-grid-tile-header>
+              </div>
+          </li>
+      </ul>
+  </div>
   <!-- content -->
-  <md-content flex class="gridListdemoDynamicTiles">
+  <!--
+  <md-content flex gridster class="gridListdemoDynamicTiles">
     <md-grid-list
         md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
         md-row-height-gt-md="1:1" md-row-height="4:3"
@@ -23,6 +35,7 @@
       </md-grid-tile>
     </md-grid-list>
   </md-content>
+  -->
   <!-- right sidenav -->
   <md-sidenav layout="column" class="md-sidenav-right md-whiteframe-z2" md-component-id="right" md-is-locked-open="false">
     <md-list class="muppet-list">

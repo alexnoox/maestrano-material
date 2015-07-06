@@ -15,6 +15,16 @@ ui-view {
   height: inherit;
 }
 
+.gridster {
+  width: 100%;
+}
+
+.gridster .gridster-item {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  color: #004756;
+  background: #ffffff;
+}
+
 .md-button.md-icon-button.menubtn {
   margin-top: 6px;
 }
