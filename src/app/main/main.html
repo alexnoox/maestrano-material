@@ -10,11 +10,9 @@
 
   <div flex gridster="vm.gridsterOpts">
       <ul>
-          <li gridster-item="item" ng-repeat="item in vm.standardItems">
-              <div ng-class="item.background" >
-                  <md-icon md-svg-icon="{{item.icon}}"></md-icon>
-                  <md-grid-tile-header><h3>{{item.title}}</h3></md-grid-tile-header>
-              </div>
+          <li gridster-item="item" ng-repeat="item in vm.tiles" ng-class="item.background">
+              <md-icon md-svg-icon="{{item.icon}}"></md-icon>
+              <md-grid-tile-header><h3>{{item.title}}</h3></md-grid-tile-header>
           </li>
       </ul>
   </div>

@@ -11,25 +11,6 @@
 
     vm.selected = null;
 
-    muppetService.loadAll().then(function(muppets){
-      vm.muppets = muppets;
-      vm.selected = vm.muppets[0];
-    });
-
-    vm.standardItems = [
-      { sizeX: 2, sizeY: 1, row: 0, col: 0 },
-      { sizeX: 2, sizeY: 2, row: 0, col: 2 },
-      { sizeX: 1, sizeY: 1, row: 0, col: 4 },
-      { sizeX: 1, sizeY: 1, row: 0, col: 5 },
-      { sizeX: 2, sizeY: 1, row: 1, col: 0 },
-      { sizeX: 1, sizeY: 1, row: 1, col: 4 },
-      { sizeX: 1, sizeY: 2, row: 1, col: 5 },
-      { sizeX: 1, sizeY: 1, row: 2, col: 0 },
-      { sizeX: 2, sizeY: 1, row: 2, col: 1 },
-      { sizeX: 1, sizeY: 1, row: 2, col: 3 },
-      { sizeX: 1, sizeY: 1, row: 2, col: 4 }
-    ];
-
     vm.gridsterOpts = {
       columns: 6, // the width of the grid, in columns
       pushing: true, // whether to push other items out of the way on move or resize
@@ -61,6 +42,11 @@
         handle: '.my-class' // optional selector for resize handle
       }
     };
+
+    muppetService.loadAll().then(function(muppets){
+      vm.muppets = muppets;
+      vm.selected = vm.muppets[0];
+    });
 
     gridTileService.loadGridModel({
       icon : "avatar:svg-",
